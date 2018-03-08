@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping >	
+	<class name="com.gtlk.entity.TestMonitorInfo" table="t_testmonitorinfo">
+		<id access="field" name="oid">
+			<generator class="native" />
+		</id>  
+        <property name="runningTime" type="java.lang.String" column="runningTime" length="20" access="field"/>
+        <property name="trainName" type="java.lang.String" column="trainName" length="20" access="field"/>
+		<property name="trainNum" type="java.lang.String"  column="trainNum" length="20" access="field" />
+		<property name="route" type="java.lang.String"  column="route" length="20" access="field" />
+		<property name="breakStation" type="java.lang.String"  column="breakStation" length="20" access="field" />
+		<property name="situation" type="java.lang.String"  column="situation" length="20" access="field" />
+		<property name="priWithoutData" type="java.lang.String"  column="priWithoutData" length="20" access="field" />
+		<property name="obuUnresponsive" type="java.lang.String"  column="obuUnresponsive" length="20" access="field" />
+		<property name="rbcUnresponsive" type="java.lang.String"  column="rbcUnresponsive" length="20" access="field" />
+		<property name="rbcReceiveAk" type="java.lang.String"  column="rbcReceiveAk" length="20" access="field" />
+		<property name="rToOak" type="java.lang.String"  column="rToOak" length="20" access="field" />
+		<property name="erData" type="java.lang.String"  column="erData" length="20" access="field" />
+		<property name="rbcReceiveRr" type="java.lang.String"  column="rbcReceiveRr" length="20" access="field" />
+		<property name="rToOrr" type="java.lang.String"  column="rToOrr" length="20" access="field" />
+		<property name="retransmsstionDirection" type="java.lang.String"  column="retransmsstionDirection" length="20" access="field" />
+		<property name="oToRnosensicalData" type="java.lang.String"  column="oToRnosensicalData" length="20" access="field" />
+		<property name="repeatedSabme" type="java.lang.String"  column="repeatedSabme" length="20" access="field" />
+		<property name="receiveFrmr" type="java.lang.String"  column="receiveFrmr" length="20" access="field" />
+		<property name="releaseReason" type="java.lang.String"  column="releaseReason" length="255" access="field" />
+		<property name="messageType" type="java.lang.String"  column="messageType" length="20" access="field" />
+		<property name="reason" type="java.lang.String"  column="reason" length="255" access="field" />
+		<property name="releaseKey" type="java.lang.String"  column="releaseKey" length="255" access="field" />
+		<property name="unfinishedSwitch" type="java.lang.String"  column="unfinishedSwitch" length="20" access="field" />
+		<property name="switchKey" type="java.lang.String"  column="switchKey" length="255" access="field" />
+		<property name="t3103Overtime" type="java.lang.String"  column="t3103Overtime" length="20" access="field" />
+		<property name="btsAbnormalMesg" type="java.lang.String"  column="btsAbnormalMesg" length="255" access="field" />
+		<property name="bscUnresponsive" type="java.lang.String"  column="bscUnresponsive" length="20" access="field" />
+		<property name="upQuality" type="java.lang.String"  column="upQuality" length="20" access="field" />
+		<property name="downQuality" type="java.lang.String"  column="downQuality" length="20" access="field" />
+		<property name="upElectricity" type="java.lang.String"  column="upElectricity" length="20" access="field" />
+		<property name="downElectricity" type="java.lang.String"  column="downElectricity" length="20" access="field" />
+		<property name="initiator" type="java.lang.String"  column="initiator" length="255" access="field" />
+		<property name="degradationType" type="java.lang.String"  column="degradationType" length="20" access="field" />
+    </class>  
+</hibernate-mapping>

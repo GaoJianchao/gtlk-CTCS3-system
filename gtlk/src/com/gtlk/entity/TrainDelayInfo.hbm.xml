@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping >	
+	<class name="com.gtlk.entity.TrainDelayInfo" table="t_traindelayinfo"> 
+		<id access="field" name="oid">
+			<generator class="native" />
+		</id> 
+        <property name="route" type="java.lang.String" column="route" length="20" access="field"/>
+        <property name="detectionTime" type="java.lang.String" column="detectionTime" length="20" access="field"/>
+		<property name="switchSuccessRate" type="java.lang.Double"  column="switchSuccessRate" access="field" />
+		<property name="switchAveDelay" type="java.lang.Double"  column="switchAveDelay" access="field" />
+		<property name="toneDegree" type="java.lang.Double"  column="toneDegree" access="field" />
+		<property name="tAveDelay" type="java.lang.Double"  column="tAveDelay" access="field" />
+		<property name="tInerrantTimeRate" type="java.lang.Double"  column="tInerrantTimeRate" access="field" />
+    	<property name="linkAveDelayRate" type="java.lang.Double"  column="linkAveDelayRate" access="field" />
+    	<property name="grade" type="java.lang.String" column="grade" length="20" access="field"/>
+    </class>  
+</hibernate-mapping>

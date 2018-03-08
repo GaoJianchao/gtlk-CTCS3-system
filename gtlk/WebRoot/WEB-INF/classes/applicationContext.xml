@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+				http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/aop  http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+    <import resource="applicationContext-common.xml" />
+
+	
+	<!--  DAO注入sessionFactory -->
+	<bean id="loginDao" class="com.gtlk.dao.impl.LoginDaoImpl">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<constructor-arg value="com.gtlk.entity.User"/> 
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	 <!--service注入dao id为下面的ref  class为 service实现类 name="service实现类中声明的dao"-->
+	<bean id="loginService" class="com.gtlk.service.impl.LoginServiceImpl" >
+    	<property name="loginDao" ref="loginDao"/>
+	</bean>
+   <!-- Action注入 service  id="" 注入 class="action路径" name="loginservice"与LoginAction中声明的要保持一致 ref随便取-->
+	<bean id="com.gtlk.action.LoginAction" class="com.gtlk.action.LoginAction" scope="prototype">
+    	<property name="loginService" ref="loginService"/>
+	</bean>
+	
+	
+	<bean id="trainmonitorinfoDao" class="com.gtlk.dao.impl.TrainMonitorInfoDaoImpl">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<constructor-arg value="com.gtlk.entity.TrainMonitorInfo"/> 
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	 <!--service注入dao id为下面的ref  class为 service实现类 name="service实现类中声明的dao"-->
+	 <bean id="trainmonitorinfoService" class="com.gtlk.service.impl.TrainMonitorInfoServiceImpl" >
+       <property name="dao" ref="trainmonitorinfoDao"/>
+	</bean>
+	<!-- Action注入 service  id="" 注入 class="action路径" name="loginservice"与LoginAction中声明的要保持一致 ref随便取-->
+	<bean id="com.gtlk.action.TrainMonitorInfoAction" class="com.gtlk.action.TrainMonitorInfoAction" scope="prototype">
+		<property name="trainMonitorInfoService" ref="trainmonitorinfoService"/>
+		<property name="ruleInfoService" ref="ruleinfoService"/>
+	</bean>
+	
+	
+	<bean id="testmonitorinfoDao" class="com.gtlk.dao.impl.TestMonitorInfoDaoImpl">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<constructor-arg value="com.gtlk.entity.TestMonitorInfo"/> 
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	 <!--service注入dao id为下面的ref  class为 service实现类 name="service实现类中声明的dao"-->
+	 <bean id="testmonitorinfoService" class="com.gtlk.service.impl.TestMonitorInfoServiceImpl" >
+       <property name="dao" ref="testmonitorinfoDao"/>
+	</bean>
+	<!-- Action注入 service  id="" 注入 class="action路径" name="loginservice"与LoginAction中声明的要保持一致 ref随便取-->
+	<bean id="com.gtlk.action.TestMonitorInfoAction" class="com.gtlk.action.TestMonitorInfoAction" scope="prototype">
+		<property name="testMonitorInfoService" ref="testmonitorinfoService"/>
+		<property name="ruleInfoService" ref="ruleinfoService"/>
+	</bean>
+	
+	
+	<bean id="traindelayinfoDao" class="com.gtlk.dao.impl.TrainDelayInfoDaoImpl">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<constructor-arg value="com.gtlk.entity.TrainDelayInfo"/> 
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	 <!--service注入dao id为下面的ref  class为 service实现类 name="service实现类中声明的dao"-->
+	 <bean id="traindelayinfoService" class="com.gtlk.service.impl.TrainDelayInfoServiceImpl" >
+       <property name="dao" ref="traindelayinfoDao"/>
+	</bean>
+	<!-- Action注入 service  id="" 注入 class="action路径" name="loginservice"与LoginAction中声明的要保持一致 ref随便取-->
+	<bean id="com.gtlk.action.TrainDelayInfoAction" class="com.gtlk.action.TrainDelayInfoAction" scope="prototype">
+		<property name="trainDelayInfoService" ref="traindelayinfoService"/>
+	</bean>
+	
+	<bean id="testdelayinfoDao" class="com.gtlk.dao.impl.TestDelayInfoDaoImpl">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<constructor-arg value="com.gtlk.entity.TestDelayInfo"/> 
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	 <!--service注入dao id为下面的ref  class为 service实现类 name="service实现类中声明的dao"-->
+	 <bean id="testdelayinfoService" class="com.gtlk.service.impl.TestDelayInfoServiceImpl" >
+       <property name="dao" ref="testdelayinfoDao"/>
+	</bean>
+	<!-- Action注入 service  id="" 注入 class="action路径" name="loginservice"与LoginAction中声明的要保持一致 ref随便取-->
+	<bean id="com.gtlk.action.TestDelayInfoAction" class="com.gtlk.action.TestDelayInfoAction" scope="prototype">
+		<property name="testDelayInfoService" ref="testdelayinfoService"/>
+	</bean>
+	
+	
+	
+	<bean id="ruleinfoDao" class="com.gtlk.dao.impl.RuleInfoDaoImpl">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<constructor-arg value="com.gtlk.entity.RuleInfo"/> 
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	 <!--service注入dao id为下面的ref  class为 service实现类 name="service实现类中声明的dao"-->
+	 <bean id="ruleinfoService" class="com.gtlk.service.impl.RuleInfoServiceImpl" >
+       <property name="dao" ref="ruleinfoDao"/>
+	</bean>
+	<!-- Action注入 service  id="" 注入 class="action路径" name="loginservice"与LoginAction中声明的要保持一致 ref随便取-->
+	<bean id="com.gtlk.action.RuleInfoAction" class="com.gtlk.action.RuleInfoAction" scope="prototype">
+		<property name="ruleInfoService" ref="ruleinfoService"/>
+	</bean>
+	
+	
+	
+	<bean id="com.gtlk.action.UploadDataAction" class="com.gtlk.action.UploadDataAction" scope="prototype">
+		<property name="trainMonitorInfoService" ref="trainmonitorinfoService"/>
+		<property name="testMonitorInfoService" ref="testmonitorinfoService"/>
+		<property name="trainDelayInfoService" ref="traindelayinfoService"/>
+		<property name="testDelayInfoService" ref="testdelayinfoService"/>
+	</bean>
+	
+<!--  	<bean id="com.gtlk.action.CreateRuleInfoAction" class="com.gtlk.action.CreateRuleInfoAction" scope="prototype">
+		<property name="ruleInfoService" ref="ruleinfoService"/>
+		<property name="trainMonitorInfoService" ref="trainmonitorinfoService"/>
+	</bean>-->
+	
+	
+	<bean id="com.gtlk.action.ScoreAction" class="com.gtlk.action.ScoreAction" scope="prototype">
+		<property name="testDelayInfoService" ref="testdelayinfoService"/>
+		<property name="trainDelayInfoService" ref="traindelayinfoService"/>
+	</bean>
+	
+	 <bean id="randomNumAction" class="com.gtlk.action.RandomNumAction" scope="prototype"/> 
+	 
+	 
+	 <bean id="userDao" class="com.gtlk.dao.impl.UserDaoImpl">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<constructor-arg value="com.gtlk.entity.User"/> 
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	 <!--service注入dao id为下面的ref  class为 service实现类 name="service实现类中声明的dao"-->
+	 <bean id="userService" class="com.gtlk.service.impl.UserServiceImpl" >
+       <property name="dao" ref="userDao"/>
+	</bean>
+	<!-- Action注入 service  id="" 注入 class="action路径" name="loginservice"与LoginAction中声明的要保持一致 ref随便取-->
+	<bean id="com.gtlk.action.UserAction" class="com.gtlk.action.UserAction" scope="prototype">
+		<property name="userService" ref="userService"/>
+	</bean>
+	
+	<bean id="com.gtlk.action.StatisticsAction" class="com.gtlk.action.StatisticsAction" scope="prototype">
+		<property name="trainMonitorInfoService" ref="trainmonitorinfoService"/>
+		<property name="testMonitorInfoService" ref="testmonitorinfoService"/>
+		<property name="trainDelayInfoService" ref="traindelayinfoService"/>
+		<property name="testDelayInfoService" ref="testdelayinfoService"/>
+	</bean>
+	
+	
+</beans>

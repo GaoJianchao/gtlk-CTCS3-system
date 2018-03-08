@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="struts2" extends="json-default" namespace="/">
+	<action name="login" class="com.gtlk.action.LoginAction" method="login">
+		<result name="success">/jsp/home.jsp</result>
+		<result name="error">/jsp/login.jsp</result>		
+	</action>
+	<!-- 接口监测数据训练集 -->
+	<action name="trainMonitorInfo" class="com.gtlk.action.TrainMonitorInfoAction">
+		<result name="deletesuccess" type="chain">listTrainMonitorInfo</result>
+		<result name="savesuccess" type="chain">listRuleInfo</result>
+	</action>
+	<action name="listTrainMonitorInfo" class="com.gtlk.action.TrainMonitorInfoAction" method="list">
+		<result>/jsp/list_trainmonitorinfo.jsp</result>
+	</action>
+	<action name="delTrainMonitorInfo" class="com.gtlk.action.TrainMonitorInfoAction" method="delete">
+		<result type="chain">listTrainMonitorInfo</result>
+	</action>
+	<action name="addTrainMonitorInfoPage" class="com.gtlk.action.TrainMonitorInfoAction" method="addPage">
+		<result>/jsp/add_trainmonitorinfo.jsp</result>
+	</action>
+	<action name="addTrainMonitorInfo" class="com.gtlk.action.TrainMonitorInfoAction" method="add">
+		<result type="chain">listTrainMonitorInfo</result>
+	</action>
+	<action name="editTrainMonitorInfoPage" class="com.gtlk.action.TrainMonitorInfoAction" method="editPage">
+		<result>/jsp/edit_trainmonitorinfo.jsp</result>
+	</action>
+	<action name="editTrainMonitorInfo" class="com.gtlk.action.TrainMonitorInfoAction" method="edit">
+		<result type="chain">listTrainMonitorInfo</result>
+	</action>
+	
+	
+	<!-- 接口监测数据测试集 -->
+	<action name="testMonitorInfo" class="com.gtlk.action.TestMonitorInfoAction">
+		<result type="chain">listTestMonitorInfo</result>
+	</action>
+	<action name="listTestMonitorInfo" class="com.gtlk.action.TestMonitorInfoAction" method="list">
+		<result>/jsp/list_testmonitorinfo.jsp</result>
+	</action>
+	<action name="delTestMonitorInfo" class="com.gtlk.action.TestMonitorInfoAction" method="delete">
+		<result type="chain">listTestMonitorInfo</result>
+	</action>
+	<action name="addTestMonitorInfoPage" class="com.gtlk.action.TestMonitorInfoAction" method="addPage">
+		<result>/jsp/add_testmonitorinfo.jsp</result>
+	</action>
+	<action name="addTestMonitorInfo" class="com.gtlk.action.TestMonitorInfoAction" method="add">
+		<result type="chain">listTestMonitorInfo</result>
+	</action>
+	<action name="editTestMonitorInfoPage" class="com.gtlk.action.TestMonitorInfoAction" method="editPage">
+		<result>/jsp/edit_testmonitorinfo.jsp</result>
+	</action>
+	<action name="editTestMonitorInfo" class="com.gtlk.action.TestMonitorInfoAction" method="edit">
+		<result type="chain">listTestMonitorInfo</result>
+	</action>
+	
+	
+	<action name="listTrainDelayInfo" class="com.gtlk.action.TrainDelayInfoAction" method="list">
+		<result>/jsp/list_traindelayinfo.jsp</result>
+	</action>
+	<action name="delTrainDelayInfo" class="com.gtlk.action.TrainDelayInfoAction" method="delete">
+		<result type="chain">listTrainDelayInfo</result>
+	</action>
+	<action name="addTrainDelayInfoPage" class="com.gtlk.action.TrainDelayInfoAction" method="addPage">
+		<result>/jsp/add_traindelayinfo.jsp</result>
+	</action>
+	<action name="addTrainDelayInfo" class="com.gtlk.action.TrainDelayInfoAction" method="add">
+		<result type="chain">listTrainDelayInfo</result>
+	</action>
+	<action name="editTrainDelayInfoPage" class="com.gtlk.action.TrainDelayInfoAction" method="editPage">
+		<result>/jsp/edit_traindelayinfo.jsp</result>
+	</action>
+	<action name="editTrainDelayInfo" class="com.gtlk.action.TrainDelayInfoAction" method="edit">
+		<result type="chain">listTrainDelayInfo</result>
+	</action>
+	
+	
+	<action name="listTestDelayInfo" class="com.gtlk.action.TestDelayInfoAction" method="list">
+		<result>/jsp/list_testdelayinfo.jsp</result>
+	</action>
+	<action name="delTestDelayInfo" class="com.gtlk.action.TestDelayInfoAction" method="delete">
+		<result type="chain">listTestDelayInfo</result>
+	</action>
+	<action name="addTestDelayInfoPage" class="com.gtlk.action.TestDelayInfoAction" method="addPage">
+		<result>/jsp/add_testdelayinfo.jsp</result>
+	</action>
+	<action name="addTestDelayInfo" class="com.gtlk.action.TestDelayInfoAction" method="add">
+		<result type="chain">listTestDelayInfo</result>
+	</action>
+	<action name="editTestDelayInfoPage" class="com.gtlk.action.TestDelayInfoAction" method="editPage">
+		<result>/jsp/edit_testdelayinfo.jsp</result>
+	</action>
+	<action name="editTestDelayInfo" class="com.gtlk.action.TestDelayInfoAction" method="edit">
+		<result type="chain">listTestDelayInfo</result>
+	</action>
+	
+	
+	<action name="listRuleInfo" class="com.gtlk.action.RuleInfoAction" method="list">
+		<result>/jsp/list_ruleinfo.jsp</result>
+	</action>
+	<action name="delRuleInfo" class="com.gtlk.action.RuleInfoAction" method="delete">
+		<result type="chain">listRuleInfo</result>
+	</action>
+	<action name="addRuleInfoPage" class="com.gtlk.action.RuleInfoAction" method="addPage">
+		<result>/jsp/add_ruleinfo.jsp</result>
+	</action>
+	<action name="addRuleInfo" class="com.gtlk.action.RuleInfoAction" method="add">
+		<result type="chain">listTestDelayInfo</result>
+	</action>
+	<action name="editRuleInfoPage" class="com.gtlk.action.RuleInfoAction" method="editPage">
+		<result>/jsp/edit_ruleinfo.jsp</result>
+	</action>
+	<action name="editRuleInfo" class="com.gtlk.action.RuleInfoAction" method="edit">
+		<result type="chain">listRuleInfo</result>
+	</action>
+	
+	<action name="uploadDataPage" class="com.gtlk.action.UploadDataAction" method="showUploadPage">
+		<result>/jsp/upload_data.jsp</result>
+	</action>
+	<action name="uploadData" class="com.gtlk.action.UploadDataAction" method="upload">
+		<!--  <interceptor-ref name="fileUpload">
+			<param name="allowedTypes">application/vnd.ms-excel</param>
+			<param name="maximumSize">20480</param>
+		</interceptor-ref>-->
+		<result name="trainmi" type="chain">listTrainMonitorInfo</result>
+		<result name="testmi" type="chain">listTestMonitorInfo</result>
+		<result name="traindi" type="chain">listTrainDelayInfo</result>
+		<result name="testdi" type="chain">listTestDelayInfo</result>
+	</action>
+	
+	
+	<action name="createRuleInfo" class="com.gtlk.action.CreateRuleInfoAction" method="execute">
+		<result type="chain">listRuleInfo</result>
+	</action>
+	<action name="createRuleInfoPage" class="com.gtlk.action.CreateRuleInfoAction" method="show">
+		<!--  <result>/jsp/createruleinfo.jsp</result>-->
+		<result type="chain">listTrainMonitorInfo</result>
+	</action>
+	
+	<action name="score" class="com.gtlk.action.ScoreAction" method="dafen">
+		<result type="chain">listTestDelayInfo</result>
+	</action>
+	
+	<action name="randomNum" class="randomNumAction">
+			<result name="success" type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">inputStream</param>
+			</result>
+	</action>
+	<action name="validataCode" class="randomNumAction" method="validataCode">
+			<result name="success" type="json"></result>
+	</action>
+	
+	
+	
+	
+	<action name="listUser" class="com.gtlk.action.UserAction" method="list">
+		<result>/jsp/list_user.jsp</result>
+	</action>
+	<action name="delUser" class="com.gtlk.action.UserAction" method="delete">
+		<result type="chain">listUser</result>
+	</action>
+	<action name="addUserPage" class="com.gtlk.action.UserAction" method="addPage">
+		<result>/jsp/add_user.jsp</result>
+	</action>
+	<action name="addUser" class="com.gtlk.action.UserAction" method="add">
+		<result type="chain">listUser</result>
+	</action>
+	<action name="editUserPage" class="com.gtlk.action.UserAction" method="editPage">
+		<result>/jsp/edit_user.jsp</result>
+	</action>
+	<action name="editUser" class="com.gtlk.action.UserAction" method="edit">
+		<result type="chain">listUser</result>
+	</action>
+	
+	
+	
+	<action name="statistics" class="com.gtlk.action.StatisticsAction" method="execute">
+		<result>/jsp/list_statistics.jsp</result>
+	</action>
+	
+	
+</package>
+	
+	
+	
+</struts>    

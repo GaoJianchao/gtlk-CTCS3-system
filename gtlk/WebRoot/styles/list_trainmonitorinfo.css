@@ -1,0 +1,189 @@
+/* CSS Document */
+
+h1, h2, h3, h4, h5, h6 {
+font-weight: bold;
+}
+h4{
+	background: url(../styles/images/home.png) no-repeat;
+	color: #fff;
+	height: 33px;
+	line-height: 33px;
+	padding-left: 50px;
+	font-weight: bold;
+	display: block;
+	-webkit-margin-before: 1.33em;
+	-webkit-margin-after: 1.33em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	margin: 1px;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+h4 span {
+position: absolute;
+right: 20px;
+top: 10px;
+margin: 0;
+padding: 0;
+border: 0;
+font: inherit;
+vertical-align: baseline;
+color: #fff;
+top:10px;
+}
+h3{
+height: 36px;
+line-height: 36px;
+margin-bottom: 10px;
+background: url(../styles/images/h3-bg.png) repeat-x;
+padding-left: 20px;
+font-size: 1.1em;	
+font-weight: bold;
+margin: 0;
+padding: 0;
+border: 0;
+font: inherit;
+vertical-align: baseline;
+display: block;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+color: #3D464B;
+top:0px;
+}
+#main{
+padding: 5px 10px;
+width: auto;	
+margin: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;	
+display: block;	
+color: #3D464B;	
+	}
+.command{
+background: url(../styles/images/command-bg-blue.png) repeat-x top #EBEBEB;
+padding: 5px 10px;
+border: 1px solid #BCD;
+zoom: 1;
+color: #3D464B;	
+	}
+.command:after {
+display: block;
+clear: both;
+visibility: hidden;
+height: 0;
+content: '';
+}
+.roubd_top{
+-webkit-border-radius: 5px 5px 0 0;
+margin: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+.button{
+background: url(../styles/images/button.png) repeat-x top;
+border: 1px solid #999;
+display: inline-block;
+color: #333 
+line-height: 22px;
+padding: 1px 10px;
+text-decoration: none
+cursor: pointer;	
+-webkit-border-radius: 5px;	
+margin: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+zoom: 1;	
+	}
+.search-pannel{
+float: right;
+position: relative;	
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;	
+display: block;
+zoom: 1;
+color: #3D464B;	
+top:0px;
+}	
+.advanced{
+background: url(../styles/images/arrow-down.png) no-repeat right center;
+margin-top: 5px;
+padding-right: 10px;
+display: inline-block;
+position: relative;
+z-index: 3;	
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;	
+	
+	
+}
+a:visited {
+color: #037;
+}
+a, a:link {
+color: #036;
+text-decoration: none;
+}
+a:-webkit-any-link {
+color: -webkit-link;
+text-decoration: underline;
+cursor: auto;
+}
+element.style {
+display: none;
+width: 410px;
+}
+.common-form {
+margin-top: 0;
+}
+.more-search {
+background: #FFF;
+border: 1px solid #CCC;
+padding: 10px;
+position: absolute;
+right: -6px;
+top: 0;
+//z-index: 2;
+border-radius: 4px;
+}
+.has_shadow {
+box-shadow: #666 4px 4px 5px;
+-webkit-box-shadow: #666 4px 4px 5px;
+-moz-box-shadow: #666 4px 4px 5px;
+}
+.common-form fieldset {
+border: 1px solid #DDD;
+padding: 10px;
+margin: 5px 0;
+max-height: 580px;
+}
+fieldset {
+display: block;
+-webkit-margin-start: 2px;
+-webkit-margin-end: 2px;
+-webkit-padding-before: 0.35em;
+-webkit-padding-start: 0.75em;
+-webkit-padding-end: 0.75em;
+-webkit-padding-after: 0.625em;
+min-width: -webkit-min-content;
+}
+
+#delForm{
+
+}
